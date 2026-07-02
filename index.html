@@ -1212,7 +1212,7 @@ function filtrarCondicion(cond,btn){
 function renderEspeciales(cond){
   var container=document.getElementById('especialesList');
   if(!container) return;
-  var filtered=RECIPES.filter(function(r){return r.condicion===cond||r.condicion==='general';});
+  var filtered=RECIPES.filter(function(r){return r.condicion===cond;});
   if(filtered.length===0){container.innerHTML='<div class="empty-state"><i class="ti ti-search"></i><p>No hay recetas para esta condición.</p></div>';return;}
   var html='';
   for(var i=0;i<filtered.length;i++){
@@ -1508,7 +1508,39 @@ function mostrarLogin(){
   div.id='loginScreen';
   div.style.cssText='position:fixed;inset:0;background:linear-gradient(135deg,#1a5c33,#2d8a4e);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:1000;padding:24px;';
   div.innerHTML='<img src="'+_LOGO_SC+'" style="height:68px;width:auto;margin-bottom:14px;filter:brightness(0) invert(1)"/>'
-    +'<div style="font-family:Georgia,serif;font-size:22px;color:#fff;font-weight:600;text-align:center;margin-bottom:4px;">Recetario Saludable</div>'
+    +'<svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" style="width:220px;height:150px;margin-bottom:14px;filter:drop-shadow(0 6px 20px rgba(0,0,0,0.35))">'
+  // Plato
+  +'<ellipse cx="100" cy="95" rx="72" ry="14" fill="rgba(0,0,0,0.15)"/>'
+  +'<circle cx="100" cy="80" r="60" fill="#fff" stroke="#2d8a4e" stroke-width="3"/>'
+  +'<circle cx="100" cy="80" r="52" fill="#f0faf4"/>'
+  +'<circle cx="100" cy="80" r="42" fill="#fff"/>'
+  // Ensalada / vegetales
+  +'<ellipse cx="100" cy="76" rx="30" ry="18" fill="#4aab6d"/>'
+  +'<ellipse cx="85" cy="72" rx="14" ry="10" fill="#2d8a4e"/>'
+  +'<ellipse cx="115" cy="74" rx="12" ry="9" fill="#3ca060"/>'
+  +'<circle cx="100" cy="68" r="8" fill="#e74c3c"/>'
+  +'<circle cx="88" cy="80" r="6" fill="#f39c12"/>'
+  +'<circle cx="112" cy="79" r="5" fill="#e74c3c"/>'
+  +'<circle cx="100" cy="82" r="4" fill="#f1c40f"/>'
+  // Tenedor izquierda
+  +'<rect x="28" y="30" width="4" height="50" rx="2" fill="#bdc3c7"/>'
+  +'<rect x="26" y="30" width="2" height="20" rx="1" fill="#95a5a6"/>'
+  +'<rect x="32" y="30" width="2" height="20" rx="1" fill="#95a5a6"/>'
+  +'<rect x="29" y="50" width="2" height="4" fill="#bdc3c7"/>'
+  // Cuchillo derecha
+  +'<rect x="168" y="30" width="4" height="50" rx="2" fill="#bdc3c7"/>'
+  +'<path d="M168 30 Q175 40 172 55 L168 55 Z" fill="#95a5a6"/>'
+  // Hojas decorativas
+  +'<ellipse cx="60" cy="30" rx="12" ry="7" fill="#2d8a4e" transform="rotate(-30 60 30)"/>'
+  +'<ellipse cx="140" cy="28" rx="10" ry="6" fill="#4aab6d" transform="rotate(25 140 28)"/>'
+  +'<ellipse cx="55" cy="42" rx="8" ry="5" fill="#3ca060" transform="rotate(-15 55 42)"/>'
+  +'<ellipse cx="148" cy="38" rx="7" ry="4" fill="#2d8a4e" transform="rotate(20 148 38)"/>'
+  // Estrella / brillo
+  +'<circle cx="145" cy="20" r="3" fill="#f1c40f"/>'
+  +'<circle cx="55" cy="18" r="2" fill="#f39c12"/>'
+  +'<circle cx="158" cy="50" r="2" fill="#4aab6d"/>'
+  +'</svg>'
+  +'<div style="font-family:Georgia,serif;font-size:22px;color:#fff;font-weight:600;text-align:center;margin-bottom:4px;">Recetario Saludable</div>'
     +'<div style="font-size:12px;color:rgba(255,255,255,.7);margin-bottom:22px;text-align:center;">I.E. Sagrado Corazón · Jaén</div>'
     +'<div style="background:#fff;border-radius:16px;padding:22px;width:100%;max-width:340px;">'
     +'<div style="font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:12px;text-align:center;">Ingresar con DNI</div>'
